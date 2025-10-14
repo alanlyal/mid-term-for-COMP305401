@@ -1,0 +1,47 @@
+# =====================================
+# Unity .gitignore template
+# =====================================
+
+# --- Unity generated folders ---
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+UserSettings/
+
+# --- Asset meta files ---
+# Only ignore meta files if their corresponding asset is also ignored
+!/[Aa]ssets/**/*.meta
+
+# --- IDE / Editor files ---
+.vs/
+.vscode/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+
+# --- OS generated files ---
+.DS_Store
+Thumbs.db
+
+# --- Environment / Config files ---
+.env
+
+# --- Package cache ---
+Packages/com.unity.package-manager.cache/
+
+# --- Other optional folders ---
+[Bb]uildArtifacts/
+[Cc]rashReports/
+[Rr]eceivedFiles/
