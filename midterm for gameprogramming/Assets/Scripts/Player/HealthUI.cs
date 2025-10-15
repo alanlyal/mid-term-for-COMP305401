@@ -11,9 +11,11 @@ public class HealthUI : MonoBehaviour
 
     private PlayerHealth playerHealth;
 
+
+
     void Update()
     {
-        
+        // Find playerHealth if we haven't already
         if (playerHealth == null)
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -21,40 +23,24 @@ public class HealthUI : MonoBehaviour
             {
                 playerHealth = player.GetComponent<PlayerHealth>();
                 if (playerHealth == null)
-                {
                     playerHealth = player.GetComponentInChildren<PlayerHealth>();
-                    if (playerHealth == null)
-                        return; 
-                }
             }
-            else
-            {
-                return; 
-            }
-            health = playerHealth.health;
-            maxHealth = playerHealth.maxHealth;
-            for (int i = 0; i < hearts.Length; i++)
-            {
-                if (hearts[i] == null) continue;
-                if (fullHeart == null || emptyHeart == null) continue; 
-                if (i < health)
-                {
-                    hearts[i].sprite = fullHeart;
-                }
-                else
-                {
-                    hearts[i].sprite = emptyHeart;
-                }
-                if (i < maxHealth)
-                {
-                    hearts[i].enabled = true;
-                }
-                else
-                {
-                    hearts[i].enabled = false;
-                }
-            }
+            if (playerHealth == null)
+                return; // still not found
+        }
 
+        // Update UI hearts every frame
+        health = playerHealth.health;
+        maxHealth = playerHealth.maxHealth;
+
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            if (hearts[i] == null) continue;
+            if (fullHeart == null || emptyHeart == null) continue;
+
+            hearts[i].sprite = (i < health) ? fullHeart : emptyHeart;
+            hearts[i].enabled = (i < maxHealth);
         }
     }
 }
+    

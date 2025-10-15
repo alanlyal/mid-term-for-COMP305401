@@ -15,6 +15,8 @@ public class enemyDamage : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         { 
             playerHealth.takeDamage(damage);
+           
+            Debug.Log("Collided with: " + collision.gameObject.name);
         }
     }
 }
