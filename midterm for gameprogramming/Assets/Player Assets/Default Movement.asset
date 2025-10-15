@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 801cd35af2421b24498e99bf89b730fe, type: 3}
+  m_Name: Default Movement
+  m_EditorClassIdentifier: 
+  MoveThreshold: 0.25
+  MaxSpeed: 8
+  GroundAcceleration: 4
+  GroundDeceleration: 20
+  AirAcceleration: 4
+  AirDeceleration: 4
+  GroundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  GroundingForce: -1.5
+  GroundDetectionRayLength: 0.02
+  HeadDetectionRayLength: 0.02
+  HeadWidth: 0.8
+  WallDetectionRayLength: 0.125
+  WallDetectionRayHeightMultiplier: 0.99
+  JumpHeight: 2.5
+  TimeTillJumpApex: 0.5
+  MaxFallSpeed: 14
+  NumberOfJumpsAllowed: 2
+  DoFastFall: 1
+  FastFallMultiplier: 1.5
+  DoWallJumpFastFall: 1
+  WallJumpFastFallMultiplier: 1.5
+  ResetJumpsOnWallSlide: 0
+  ApexThreshold: 0.97
+  ApexHangTime: 0.025
+  JumpBufferTime: 0.171
+  JumpCoyoteTime: 0.1
+  WallSlideSpeed: 1.5
+  WallSlideDecelerationSpeed: 50
+  WallJumpDirection: {x: -5, y: 2}
+  WallJumpBufferTime: 0.125
+  DebugShowIsGroundedBox: 1
+  DebugShowHeadBumpBox: 1
+  DebugShowWallHitBox: 1
