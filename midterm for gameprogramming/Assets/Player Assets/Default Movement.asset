@@ -27,7 +27,7 @@ MonoBehaviour:
   HeadWidth: 0.8
   WallDetectionRayLength: 0.125
   WallDetectionRayHeightMultiplier: 0.99
-  JumpHeight: 2.5
+  JumpHeight: 5
   TimeTillJumpApex: 0.5
   MaxFallSpeed: 14
   NumberOfJumpsAllowed: 2
@@ -37,7 +37,7 @@ MonoBehaviour:
   WallJumpFastFallMultiplier: 1.5
   ResetJumpsOnWallSlide: 0
   ApexThreshold: 0.97
-  ApexHangTime: 0.025
+  ApexHangTime: 0.05
   JumpBufferTime: 0.171
   JumpCoyoteTime: 0.1
   WallSlideSpeed: 1.5

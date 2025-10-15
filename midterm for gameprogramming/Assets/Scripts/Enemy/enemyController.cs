@@ -16,6 +16,7 @@ public class enemyController : MonoBehaviour
     private int currentHealth;
     ///////////
     //damage
+    public int damage = 1;
     private SpriteRenderer spriteRenderer;
     public Color damageColor = Color.red;
     private Color originalColor;
