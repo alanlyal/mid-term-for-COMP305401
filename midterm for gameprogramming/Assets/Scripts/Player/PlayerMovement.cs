@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -11,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Collider2D feetColl;
 
     private Rigidbody2D rb;
+
+    private Animator animator;
 
     //movement vars
     public float HorizontalVelocity { get; private set; }
@@ -60,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
         isFacingRight = true;
 
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -91,6 +95,9 @@ public class PlayerMovement : MonoBehaviour
         }
 
         ApplyVelocity();
+        animator.SetBool("isFalling", isFalling);
+        animator.SetBool("landed", isGrounded);
+        animator.SetBool("isWalking", (InputManager.Movement.x != 0));
     }
 
     private void ApplyVelocity()
@@ -241,6 +248,13 @@ public class PlayerMovement : MonoBehaviour
             isJumping = true;
         }
 
+        if (SoundEffectManager.Instance != null)
+        {
+            SoundEffectManager.Play("Jump");
+        }
+
+        animator.SetTrigger("jump");
+
         ResetWallJumpValues();
 
         jumpBufferTimer = 0f;
@@ -371,6 +385,14 @@ public class PlayerMovement : MonoBehaviour
         {
             isWallJumping = true;
         }
+
+
+        if (SoundEffectManager.Instance != null)
+        {
+            SoundEffectManager.Play("Jump");
+        }
+
+        animator.SetTrigger("jump");
 
         isWallSliding = false;
         ResetJumpValues();

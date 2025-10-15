@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 607228490756096936}
   - component: {fileID: 7766687974657539841}
   - component: {fileID: 5815593861857080499}
-  - component: {fileID: 5314036196709024203}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
@@ -169,22 +168,9 @@ MonoBehaviour:
   speed: 3
   groundDetection: {fileID: 1607085331424503891}
   health: 3
+  damage: 1
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   damageflash: 0.1
---- !u!114 &5314036196709024203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3637713099557461211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 051af09a1c050a34b945c339a1b005da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
-  playerHealth: {fileID: 0}
 --- !u!1 &4073474866707851625
 GameObject:
   m_ObjectHideFlags: 0
