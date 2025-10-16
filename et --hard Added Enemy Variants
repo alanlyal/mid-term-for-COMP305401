@@ -1,0 +1,33 @@
+[33m3bc1c19[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m tried to do powerups need to be looked at
+[33m9054cac[m Revert "tried to do powerups need to be looked at"
+[33mb8ffd06[m tried to do powerups need to be looked at
+[33mf118d65[m tried to make powerup need to be looked at
+[33mdc7667a[m Added Enemy Variants
+[33mfdb878f[m Enemy death added
+[33m0a57d1e[m Gun again
+[33md2fe082[m Merge branch 'main' of https://github.com/alanlyal/mid-term-for-COMP305401
+[33m3dcc899[m Added guns
+[33m55c709c[m added walk animation for enemy 1
+[33m0f0eb1b[m added enemy sprites
+[33m7517d7e[m Fixes
+[33madb9297[m Merge branch 'main' of https://github.com/alanlyal/mid-term-for-COMP305401
+[33mae267d6[m Test
+[33mf65862c[m Merge branch 'main' of https://github.com/alanlyal/mid-term-for-COMP305401
+[33ma8805a8[m fixes
+[33mf1fb339[m Added controller support for menu
+[33ma5f5a80[m Jump Visualization
+[33m4dd9faf[m level saves
+[33m9a946b5[m half level
+[33m89df4e0[m Enemy Adjustment
+[33m62636f0[m Merge branch 'main' of https://github.com/alanlyal/mid-term-for-COMP305401
+[33me3fd886[m StateMachine Enemy setup
+[33m8a631cf[m Merge branch 'main' of https://github.com/alanlyal/mid-term-for-COMP305401
+[33mbbacdbd[m ported some scripts
+[33made20e9[m Fixed Conflicts
+[33m76fec9f[m Merge branch 'main' into Placeholder
+[33m27d32a3[m Placeholder for merging
+[33m2847267[m added hp ui and ported enemy scripts
+[33m4de2444[m basic menu and pause done
+[33m17b2cf7[m ASSET DUMP
+[33mccc165d[m Added Player and Enemy
+[33m1062117[m created the project for the midterm
