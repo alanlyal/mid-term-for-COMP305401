@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    #region Variables
+
     [Header("References")]
     public MovementStats MoveStats;
     [SerializeField] private Collider2D bodyColl;
@@ -58,6 +60,10 @@ public class PlayerMovement : MonoBehaviour
     private float timePastWallJumpApexThreshold;
     private bool isPastWallJumpApexThreshold;
 
+    #endregion
+
+    #region Unity Callbacks
+
     private void Awake()
     {
         isFacingRight = true;
@@ -107,6 +113,8 @@ public class PlayerMovement : MonoBehaviour
 
         rb.velocity = new Vector2(HorizontalVelocity, VerticalVelocity);
     }
+
+    #endregion
 
     #region Movement
 
@@ -605,6 +613,75 @@ public class PlayerMovement : MonoBehaviour
 
         //WALL JUMP COOLDOWN
         wallJumpCooldownTimer -= Time.deltaTime;
+    }
+
+    #endregion
+
+    #region Jump Visualization
+
+    [SerializeField] private bool visualizeJumpArc = true;
+
+    private void OnDrawGizmos()
+    {
+        if (!visualizeJumpArc) return;
+
+        Vector2 startPos = new Vector2(feetColl.bounds.center.x, feetColl.bounds.min.y);
+        Vector2 velocity = new Vector2(MoveStats.MaxSpeed, MoveStats.JumpVelocity);
+        float gravity = MoveStats.Gravity;
+        float timeStep = 0.05f;
+
+        float apexTime = MoveStats.TimeTillJumpApex;
+        float hangTime = MoveStats.ApexHangTime;
+        float totalSimTime = apexTime + hangTime + 2f; // rough guess — enough to hit ground
+        LayerMask groundLayer = MoveStats.GroundLayer;
+
+        Vector2 prevPos = startPos;
+        bool pastApex = false;
+        float apexY = 0f;
+        float timeSinceApex = 0f;
+
+        for (float t = 0f; t < totalSimTime; t += timeStep)
+        {
+            float newX = startPos.x + velocity.x * t;
+            float newY;
+
+            if (t <= apexTime)
+            {
+                // Going up
+                newY = startPos.y + velocity.y * t + 0.5f * gravity * t * t;
+            }
+            else if (t <= apexTime + hangTime)
+            {
+                // Apex hang (no vertical movement)
+                if (!pastApex)
+                {
+                    apexY = startPos.y + velocity.y * apexTime + 0.5f * gravity * Mathf.Pow(apexTime, 2f);
+                    pastApex = true;
+                }
+                newY = apexY;
+            }
+            else
+            {
+                // Falling
+                timeSinceApex = t - (apexTime + hangTime);
+                float fallGravity = gravity * (MoveStats.DoFastFall ? MoveStats.FastFallMultiplier : 1f);
+                newY = apexY + 0.5f * fallGravity * Mathf.Pow(timeSinceApex, 2f);
+            }
+
+            Vector2 currentPos = new Vector2(newX, newY);
+
+            // Check collision with ground
+            if (Physics2D.Linecast(prevPos, currentPos, groundLayer))
+            {
+                Gizmos.color = Color.yellow;
+                Gizmos.DrawLine(prevPos, currentPos);
+                break;
+            }
+
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawLine(prevPos, currentPos);
+            prevPos = currentPos;
+        }
     }
 
     #endregion

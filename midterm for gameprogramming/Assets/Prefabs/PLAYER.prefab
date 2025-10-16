@@ -313,6 +313,7 @@ MonoBehaviour:
   isJumping: 0
   isFalling: 0
   numOfJumpsUsed: 0
+  visualizeJumpArc: 1
 --- !u!114 &2358651322167031185
 MonoBehaviour:
   m_ObjectHideFlags: 0
