@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class GunStats : ScriptableObject
 {
+   
     [Header("Stats")]
     public float fireRate = 0.2f;
     public int bulletsPerShot = 1;
