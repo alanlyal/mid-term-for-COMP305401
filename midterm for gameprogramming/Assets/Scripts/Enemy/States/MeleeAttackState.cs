@@ -22,13 +22,10 @@ public class MeleeAttackState : EnemyBaseState
 
             if (damageable != null)
             {
-                hitCollider.GetComponentInParent<Rigidbody2D>().velocity = new Vector2(enemy.stats.knockbackAngle.x * enemy.facingDirection,
-                    enemy.stats.knockbackAngle.y) * enemy.stats.knockbackForce;
-                damageable.Damage(enemy.stats.damage);
+                damageable.Damage(enemy.stats.damage, enemy.stats.knockbackForce, new Vector2(enemy.stats.knockbackAngle.x * enemy.facingDirection,
+                    enemy.stats.knockbackAngle.y));
             }
         }
-
-        enemy.SwitchState(enemy.patrolState);
     }
 
     public override void Exit()
@@ -44,5 +41,17 @@ public class MeleeAttackState : EnemyBaseState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+
+        if (Time.time >= enemy.stateTime + enemy.stats.attackCooldown)
+        {
+            if (enemy.CheckForPlayer() && enemy.stats.doChargeState)
+            {
+                enemy.SwitchState(enemy.playerDetectedState);
+            }
+            else
+            {
+                enemy.SwitchState(enemy.patrolState);
+            }
+        }
     }
 }

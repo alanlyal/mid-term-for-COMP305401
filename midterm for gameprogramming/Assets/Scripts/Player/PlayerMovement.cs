@@ -19,7 +19,8 @@ public class PlayerMovement : MonoBehaviour
 
     //movement vars
     public float HorizontalVelocity { get; private set; }
-    private bool isFacingRight;
+    public bool isFacingRight;
+    private Vector2 externalForces;
 
     //collision check vars
     private RaycastHit2D groundHit;
@@ -106,12 +107,22 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("isWalking", (InputManager.Movement.x != 0));
     }
 
+    public void AddExternalForce(Vector2 force)
+    {
+        externalForces += force;
+    }
+
     private void ApplyVelocity()
     {
         //CLAMP FALL SPEED
         VerticalVelocity = Mathf.Clamp(VerticalVelocity, -MoveStats.MaxFallSpeed, 50f);
 
-        rb.velocity = new Vector2(HorizontalVelocity, VerticalVelocity);
+        Vector2 baseVelocity = new Vector2(HorizontalVelocity, VerticalVelocity);
+        Vector2 finalVelocity = baseVelocity + externalForces;
+
+        rb.velocity = finalVelocity;
+
+        externalForces = Vector2.Lerp(externalForces, Vector2.zero, 8f * Time.fixedDeltaTime);
     }
 
     #endregion

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IDamageable
 {
     #region Variables
 
@@ -12,13 +12,17 @@ public class Enemy : MonoBehaviour
     public PlayerDetectedState playerDetectedState;
     public ChargeState chargeState;
     public MeleeAttackState meleeAttackState;
+    public DamagedState damagedState;
+    public DeathState deathState;
 
     public EnemyStats stats;
     public Transform ledgeDetector;
+    [HideInInspector] public Animator anim;
     [HideInInspector] public Rigidbody2D rb;
     [HideInInspector] public float stateTime; //keeps track of when we enter a state
 
     public int facingDirection = 1;
+    public float currentHealth;
 
     #endregion
 
@@ -28,9 +32,15 @@ public class Enemy : MonoBehaviour
     {
         patrolState = new PatrolState(this, "patrol");
         playerDetectedState = new PlayerDetectedState(this, "playerDetected");
-        chargeState = new ChargeState(this, "chargeState");
+        chargeState = new ChargeState(this, "charge");
         meleeAttackState = new MeleeAttackState(this, "meleeAttack");
+        damagedState = new DamagedState(this, "damaged");
+        deathState = new DeathState(this, "death");
+
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+
+        currentHealth = stats.maxHealth;
 
         currentState = patrolState;
         currentState.Enter();
@@ -86,6 +96,37 @@ public class Enemy : MonoBehaviour
         currentState.Enter();
 
         stateTime = Time.time;
+    }
+
+    public void Rotate()
+    {
+        transform.Rotate(0f, 180f, 0f);
+        facingDirection = -facingDirection;
+    }
+
+    public void Instantiate(GameObject prefab)
+    {
+        Instantiate(prefab, transform.position, Quaternion.identity);
+    }
+
+    public void Damage(float damageAmount)
+    {
+    }
+
+    public void Damage(float damageAmount, float KBForce, Vector2 KBAngle)
+    {
+        damagedState.KBForce = KBForce;
+        damagedState.KBAngle = KBAngle;
+        currentHealth -= damageAmount;
+
+        if (currentHealth <= 0)
+        {
+            SwitchState(deathState);
+        }
+        else
+        {
+            SwitchState(damagedState);
+        }
     }
 
     private void OnDrawGizmos()

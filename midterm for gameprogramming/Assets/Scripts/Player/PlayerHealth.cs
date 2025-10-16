@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     [SerializeField] private float iFrameDuration;
     [SerializeField] private float numOfFlashes;
     private SpriteRenderer spriteRend;
+    private PlayerMovement playerMovement;
 
     private void Start()
     {
@@ -23,6 +24,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         healthUI.SetMaxHearts(maxHealth);
 
         spriteRend = GetComponent<SpriteRenderer>();
+        playerMovement = GetComponent<PlayerMovement>();
     }
 
     public void Damage(float damageAmount)
@@ -55,5 +57,19 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         damageable = true;
     }
 
+    public void Damage(float damageAmount, float KBForce, Vector2 KBAngle)
+    {
+        if (currentHealth > 0 && damageable)
+        {
+            playerMovement.AddExternalForce(KBAngle * KBForce);
+            currentHealth -= damageAmount;
+            healthUI.UpdateHearts(currentHealth);
+            StartCoroutine(Invunerability());
+        }
 
+        if (currentHealth <= 0)
+        {
+            //player is dead
+        }
+    }
 }

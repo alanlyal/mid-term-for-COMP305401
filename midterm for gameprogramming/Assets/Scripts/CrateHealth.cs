@@ -11,6 +11,10 @@ public class CrateHealth : MonoBehaviour, IDamageable
         health -= damageAmount;
     }
 
+    public void Damage(float damageAmount, float KBForce, Vector2 KBAngle)
+    {
+    }
+
     private void Update()
     {
         if (health <= 0)

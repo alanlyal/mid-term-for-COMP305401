@@ -20,14 +20,21 @@ public class PatrolState : EnemyBaseState
     {
         base.LogicUpdate();
 
-        if (enemy.CheckForPlayer())
+        if (enemy.CheckForPlayer() && enemy.stats.doChargeState)
         {
             enemy.SwitchState(enemy.playerDetectedState);
+        }
+        else
+        {
+            if (enemy.CheckForMeleeTarget())
+            {
+                enemy.SwitchState(enemy.meleeAttackState);
+            }
         }
 
         if (enemy.CheckForObstacles())
         {
-            Rotate();
+            enemy.Rotate();
         }
     }
 
@@ -36,11 +43,5 @@ public class PatrolState : EnemyBaseState
         base.PhysicsUpdate();
 
         enemy.rb.velocity = new Vector2(enemy.facingDirection * enemy.stats.moveSpeed, enemy.rb.velocity.y);
-    }
-
-    void Rotate()
-    {
-        enemy.transform.Rotate(0f, 180f, 0f);
-        enemy.facingDirection = -enemy.facingDirection;
     }
 }
