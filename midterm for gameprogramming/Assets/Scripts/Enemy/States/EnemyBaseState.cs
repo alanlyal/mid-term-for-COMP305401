@@ -15,7 +15,7 @@ public class EnemyBaseState
 
     public virtual void Enter()
     {
-        Debug.Log("Entered " + animationName);
+        //Debug.Log("Entered " + animationName);
     }
 
     public virtual void Exit() { }

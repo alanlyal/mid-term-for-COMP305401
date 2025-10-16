@@ -10,15 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9aaf0070262823846bba05be24882f62, type: 3}
-  m_Name: Enemy Stats
+  m_Name: Base Stats
   m_EditorClassIdentifier: 
   moveSpeed: 2.5
-  acceleration: 5
-  deceleration: 5
-  canFly: 0
-  canJump: 1
-  jumpForce: 5
-  playerDetectDistance: 5
   edgeCheckDistance: 1
   obstacleDistance: 0.1
   GroundLayer:
@@ -27,8 +21,18 @@ MonoBehaviour:
   ObstacleLayer:
     serializedVersion: 2
     m_Bits: 576
+  playerDetectDistance: 3.4
+  playerDetectedWaitTime: 1
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 128
+  chargeTime: 2
+  chargeSpeed: 5
   damage: 1
+  meleeDetectDistance: 0.5
+  knockbackAngle: {x: 2, y: 1}
+  knockbackForce: 10
+  DamageableLayer:
+    serializedVersion: 2
+    m_Bits: 640
   health: 3

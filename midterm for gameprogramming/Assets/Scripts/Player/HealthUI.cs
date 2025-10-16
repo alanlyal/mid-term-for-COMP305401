@@ -11,7 +11,7 @@ public class HealthUI : MonoBehaviour
 
     private List<Image> hearts = new List<Image>();
 
-    public void SetMaxHearts(int maxHearts)
+    public void SetMaxHearts(float maxHearts)
     {
         foreach (Image heart in hearts)
         {
@@ -28,7 +28,7 @@ public class HealthUI : MonoBehaviour
         }
     }
 
-    public void UpdateHearts(int currentHealth)
+    public void UpdateHearts(float currentHealth)
     {
         for (int i = 0; i < hearts.Count; i++)
         {

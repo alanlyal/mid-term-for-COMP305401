@@ -18,7 +18,7 @@ public class PlayerDetectedState : EnemyBaseState
 
     public override void Exit()
     {
-
+        base.Exit();
     }
 
     public override void LogicUpdate()
@@ -28,6 +28,13 @@ public class PlayerDetectedState : EnemyBaseState
         if (!enemy.CheckForPlayer())
         {
             enemy.SwitchState(enemy.patrolState);
+        }
+        else
+        {
+            if (Time.time >= enemy.stateTime + enemy.stats.playerDetectedWaitTime)
+            {
+                enemy.SwitchState(enemy.chargeState);
+            }
         }
     }
 

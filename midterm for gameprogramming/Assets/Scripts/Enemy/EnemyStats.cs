@@ -6,26 +6,28 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Enemy Stats")]
 public class EnemyStats : ScriptableObject
 {
-    [Header("Movement")]
+    [Header("Patrol State")]
     public float moveSpeed = 5f;
-    public float acceleration = 5f;
-    public float deceleration = 5f;
-    public bool canFly = false;
-
-    [Header("Jump")]
-    public bool canJump = true;
-    public float jumpForce = 5f;
-
-    [Header("Detection")]
-    public float playerDetectDistance = 5f;
-    public float edgeCheckDistance = 2f;
-    public float obstacleDistance = 5f;
+    public float edgeCheckDistance = 1f;
+    public float obstacleDistance = 0.5f;
     public LayerMask GroundLayer;
     public LayerMask ObstacleLayer;
+
+    [Header("Player Detection")]
+    public float playerDetectDistance = 5f;
+    public float playerDetectedWaitTime = 1f;
     public LayerMask PlayerLayer;
 
-    [Header("Attack")]
+    [Header("Charge State")]
+    public float chargeTime = 2f;
+    public float chargeSpeed = 5f;
+
+    [Header("Melee Attack State")]
     public float damage = 1f;
+    public float meleeDetectDistance = 0.5f;
+    public Vector2 knockbackAngle;
+    public float knockbackForce;
+    public LayerMask DamageableLayer;
 
     [Header("Health")]
     public float health = 3f;

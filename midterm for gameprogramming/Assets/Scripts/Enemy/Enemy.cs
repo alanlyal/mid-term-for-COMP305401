@@ -10,12 +10,15 @@ public class Enemy : MonoBehaviour
 
     public PatrolState patrolState;
     public PlayerDetectedState playerDetectedState;
+    public ChargeState chargeState;
+    public MeleeAttackState meleeAttackState;
 
     public EnemyStats stats;
-    public Rigidbody2D rb;
     public Transform ledgeDetector;
+    [HideInInspector] public Rigidbody2D rb;
+    [HideInInspector] public float stateTime; //keeps track of when we enter a state
 
-    public bool facingRight = true;
+    public int facingDirection = 1;
 
     #endregion
 
@@ -25,6 +28,8 @@ public class Enemy : MonoBehaviour
     {
         patrolState = new PatrolState(this, "patrol");
         playerDetectedState = new PlayerDetectedState(this, "playerDetected");
+        chargeState = new ChargeState(this, "chargeState");
+        meleeAttackState = new MeleeAttackState(this, "meleeAttack");
         rb = GetComponent<Rigidbody2D>();
 
         currentState = patrolState;
@@ -48,7 +53,7 @@ public class Enemy : MonoBehaviour
     public bool CheckForObstacles()
     {
         RaycastHit2D hit = Physics2D.Raycast(ledgeDetector.position, Vector2.down, stats.edgeCheckDistance, stats.GroundLayer);
-        RaycastHit2D hitObstacle = Physics2D.Raycast(ledgeDetector.position, facingRight ? Vector2.right : Vector2.left, stats.obstacleDistance, stats.ObstacleLayer);
+        RaycastHit2D hitObstacle = Physics2D.Raycast(ledgeDetector.position, facingDirection == 1 ? Vector2.right : Vector2.left, stats.obstacleDistance, stats.ObstacleLayer);
 
         if (hit.collider == null || hitObstacle == true) { return true; }
         else { return false; }
@@ -56,9 +61,17 @@ public class Enemy : MonoBehaviour
 
     public bool CheckForPlayer()
     {
-        RaycastHit2D hitPlayer = Physics2D.Raycast(ledgeDetector.position, facingRight ? Vector2.right : Vector2.left, stats.playerDetectDistance, stats.PlayerLayer);
+        RaycastHit2D hitPlayer = Physics2D.Raycast(ledgeDetector.position, facingDirection == 1 ? Vector2.right : Vector2.left, stats.playerDetectDistance, stats.PlayerLayer);
 
         if (hitPlayer.collider == true) { return true; }
+        else { return false; }
+    }
+
+    public bool CheckForMeleeTarget()
+    {
+        RaycastHit2D hitMeleeTarget = Physics2D.Raycast(ledgeDetector.position, facingDirection == 1 ? Vector2.right : Vector2.left, stats.meleeDetectDistance, stats.DamageableLayer);
+
+        if (hitMeleeTarget.collider == true) { return true; }
         else { return false; }
     }
 
@@ -71,11 +84,13 @@ public class Enemy : MonoBehaviour
         currentState.Exit();
         currentState = newState;
         currentState.Enter();
+
+        stateTime = Time.time;
     }
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawRay(ledgeDetector.position, (facingRight ? Vector2.right : Vector2.left) * stats.playerDetectDistance);
+        Gizmos.DrawRay(ledgeDetector.position, (facingDirection == 1 ? Vector2.right : Vector2.left) * stats.playerDetectDistance);
     }
 
     #endregion
