@@ -284,8 +284,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Mercenary Wars
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a3889f4fb2e2baf438ca6c13bbd9f4c6, type: 2}
+  m_sharedMaterial: {fileID: -18108116449552888, guid: a3889f4fb2e2baf438ca6c13bbd9f4c6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -418,8 +418,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: credit to  Nicholas Wagner, Adam La Selva ,Alex Huberdeau
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a3889f4fb2e2baf438ca6c13bbd9f4c6, type: 2}
+  m_sharedMaterial: {fileID: -18108116449552888, guid: a3889f4fb2e2baf438ca6c13bbd9f4c6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -443,8 +443,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -774,8 +774,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: back to menu
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a3889f4fb2e2baf438ca6c13bbd9f4c6, type: 2}
+  m_sharedMaterial: {fileID: -18108116449552888, guid: a3889f4fb2e2baf438ca6c13bbd9f4c6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -959,7 +959,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -838, y: 88}
+  m_AnchoredPosition: {x: -838, y: 35}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1759116577
@@ -982,10 +982,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Assets creatred by Atomic Realm link: https://atomicrealm.itch.io/industrial-tileset'
+  m_text: 'assets list Atomic Realm link: https://atomicrealm.itch.io/industrial-tileset
+
+    0x72
+    Link https://0x72.itch.io/16x16-robot-tileset
+
+    Tiny Wolrds link: https://assetstore.unity.com/packages/2d/fonts/free-pixel-font-thaleah-140059'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a3889f4fb2e2baf438ca6c13bbd9f4c6, type: 2}
+  m_sharedMaterial: {fileID: -18108116449552888, guid: a3889f4fb2e2baf438ca6c13bbd9f4c6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1009,8 +1014,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
