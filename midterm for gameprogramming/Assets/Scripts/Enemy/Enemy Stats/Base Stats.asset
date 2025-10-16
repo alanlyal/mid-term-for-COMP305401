@@ -30,7 +30,7 @@ MonoBehaviour:
   chargeSpeed: 5
   damage: 1
   meleeDetectDistance: 0.5
-  knockbackAngle: {x: 0, y: 5}
+  knockbackAngle: {x: 2, y: 1}
   knockbackForce: 10
   DamageableLayer:
     serializedVersion: 2

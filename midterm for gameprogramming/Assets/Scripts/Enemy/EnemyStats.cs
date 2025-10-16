@@ -25,10 +25,15 @@ public class EnemyStats : ScriptableObject
     [Header("Melee Attack State")]
     public float damage = 1f;
     public float meleeDetectDistance = 0.5f;
+    public float attackCooldown = 1f;
     public Vector2 knockbackAngle;
     public float knockbackForce;
     public LayerMask DamageableLayer;
 
     [Header("Health")]
-    public float health = 3f;
+    public float maxHealth = 3f;
+    public float stunTime = 0.5f;
+
+    [Header("Prefabs")]
+    public GameObject deathParticle;
 }
