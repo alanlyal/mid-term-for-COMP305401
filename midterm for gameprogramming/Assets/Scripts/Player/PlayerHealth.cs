@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour, IDamageable
 {
     [Header("Health")]
-    public int maxHealth = 5;
-    public int currentHealth;
+    public float maxHealth = 5;
+    public float currentHealth;
+
+    private bool damageable = true;
 
     public HealthUI healthUI;
 
@@ -23,24 +25,14 @@ public class PlayerHealth : MonoBehaviour
         spriteRend = GetComponent<SpriteRenderer>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void Damage(float damageAmount)
     {
-        enemyController enemy = collision.gameObject.GetComponent<enemyController>();
-        if (enemy)
+        if (currentHealth > 0 && damageable)
         {
-            TakeDamage(enemy.damage);
-        }
-    }
-
-    private void TakeDamage(int damage)
-    {
-        if (currentHealth > 0)
-        {
-            currentHealth -= damage;
+            currentHealth -= damageAmount;
             healthUI.UpdateHearts(currentHealth);
             StartCoroutine(Invunerability());
         }
-
 
         if (currentHealth <= 0)
         {
@@ -51,6 +43,7 @@ public class PlayerHealth : MonoBehaviour
     private IEnumerator Invunerability()
     {
         Physics2D.IgnoreLayerCollision(7, 8, true);
+        damageable = false;
         for (int i = 0; i < numOfFlashes; i++)
         {
             spriteRend.color = new Color(1, 0.5f, 0.5f);
@@ -59,5 +52,8 @@ public class PlayerHealth : MonoBehaviour
             yield return new WaitForSeconds(iFrameDuration / (numOfFlashes));
         }
         Physics2D.IgnoreLayerCollision(7, 8, false);
+        damageable = true;
     }
+
+
 }

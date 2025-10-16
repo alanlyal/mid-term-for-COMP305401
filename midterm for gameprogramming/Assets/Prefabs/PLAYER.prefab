@@ -190,8 +190,6 @@ GameObject:
   - component: {fileID: 5436876481930797412}
   - component: {fileID: 3706582168688094167}
   - component: {fileID: 2358651322167031185}
-  - component: {fileID: 4684924598711359836}
-  - component: {fileID: 8757454111104391976}
   - component: {fileID: 9003497129809945995}
   m_Layer: 7
   m_Name: PLAYER
@@ -313,6 +311,7 @@ MonoBehaviour:
   isJumping: 0
   isFalling: 0
   numOfJumpsUsed: 0
+  visualizeJumpArc: 1
 --- !u!114 &2358651322167031185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,48 +329,6 @@ MonoBehaviour:
   healthUI: {fileID: 0}
   iFrameDuration: 1
   numOfFlashes: 3
---- !u!114 &4684924598711359836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9000603408824658712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62bdc813b4005ab44ae931dc08a8a274, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8757454111104391976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9000603408824658712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 807597244dd62854fb4caf83c27651c7, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!95 &9003497129809945995
 Animator:
   serializedVersion: 5
