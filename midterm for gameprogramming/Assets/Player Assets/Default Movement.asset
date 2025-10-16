@@ -21,7 +21,7 @@ MonoBehaviour:
   GroundLayer:
     serializedVersion: 2
     m_Bits: 576
-  GroundingForce: -1.5
+  GroundingForce: -0.22
   GroundDetectionRayLength: 0.02
   HeadDetectionRayLength: 0.02
   HeadWidth: 0.8
@@ -29,7 +29,7 @@ MonoBehaviour:
   WallDetectionRayHeightMultiplier: 0.99
   JumpHeight: 2
   TimeTillJumpApex: 0.5
-  MaxFallSpeed: 10
+  MaxFallSpeed: 14
   NumberOfJumpsAllowed: 1
   DoFastFall: 1
   FastFallMultiplier: 1.5
