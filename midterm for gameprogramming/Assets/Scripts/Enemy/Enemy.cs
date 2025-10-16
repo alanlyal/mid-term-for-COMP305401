@@ -106,7 +106,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public void Instantiate(GameObject prefab)
     {
-        Instantiate(prefab, transform.position, Quaternion.identity);
+        Instantiate(prefab, new Vector3(transform.position.x, transform.position.y - 0.3f, transform.position.z), Quaternion.identity);
     }
 
     public void Damage(float damageAmount)
