@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d83b3756836884a4baf93e7e2c9e18e5, type: 3}
-  m_Name: shotgun
+  m_Name: plusRifle
   m_EditorClassIdentifier: 
   fireRate: 0.1
-  bulletsPerShot: 6
-  spreadAngle: 10
+  bulletsPerShot: 3
+  spreadAngle: 1
   bulletSpeed: 10
-  bulletDamage: 4
-  bulletLifeTime: 1
+  bulletDamage: 1
+  bulletLifeTime: 2
   KBForce: 0
   KBAngle: {x: 0, y: 0}
   bulletPrefab: {fileID: 6915267118670388648, guid: e96c457d207c80848bcc1d6ac41f065c, type: 3}
   DamageableLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
