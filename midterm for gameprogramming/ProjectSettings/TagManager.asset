@@ -48,3 +48,9 @@ TagManager:
   - name: Player
     uniqueID: 2170223073
     locked: 0
+  - name: Background
+    uniqueID: 1508869039
+    locked: 0
+  - name: FarBackground
+    uniqueID: 65624457
+    locked: 0
