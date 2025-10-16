@@ -14,6 +14,7 @@ public class DeathState : EnemyBaseState
         base.Enter();
 
         enemy.Instantiate(enemy.stats.deathParticle);
+        enemy.gameObject.SetActive(false);
     }
 
     public override void Exit()

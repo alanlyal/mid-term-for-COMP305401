@@ -44,7 +44,7 @@ public class MeleeAttackState : EnemyBaseState
 
         if (Time.time >= enemy.stateTime + enemy.stats.attackCooldown)
         {
-            if (enemy.CheckForPlayer())
+            if (enemy.CheckForPlayer() && enemy.stats.doChargeState)
             {
                 enemy.SwitchState(enemy.playerDetectedState);
             }
