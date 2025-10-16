@@ -7183,6 +7183,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   stateTime: 0
   facingDirection: 1
+  currentHealth: 0
 --- !u!1 &8977803790806460893
 GameObject:
   m_ObjectHideFlags: 0

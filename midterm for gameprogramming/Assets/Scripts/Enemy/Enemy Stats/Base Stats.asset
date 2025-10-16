@@ -30,9 +30,12 @@ MonoBehaviour:
   chargeSpeed: 5
   damage: 1
   meleeDetectDistance: 0.5
+  attackCooldown: 1
   knockbackAngle: {x: 2, y: 1}
   knockbackForce: 10
   DamageableLayer:
     serializedVersion: 2
     m_Bits: 640
-  health: 3
+  maxHealth: 3
+  stunTime: 0.5
+  deathParticle: {fileID: 8247967714174777216, guid: a634c4aaabbe81542ac7330d081617a0, type: 3}
