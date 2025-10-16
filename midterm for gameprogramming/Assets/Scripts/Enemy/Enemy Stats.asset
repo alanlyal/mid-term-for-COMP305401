@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aaf0070262823846bba05be24882f62, type: 3}
+  m_Name: Enemy Stats
+  m_EditorClassIdentifier: 
+  moveSpeed: 2.5
+  acceleration: 5
+  deceleration: 5
+  canFly: 0
+  canJump: 1
+  jumpForce: 5
+  playerDetectDistance: 5
+  edgeCheckDistance: 1
+  obstacleDistance: 0.1
+  GroundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  ObstacleLayer:
+    serializedVersion: 2
+    m_Bits: 576
+  PlayerLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  damage: 1
+  health: 3
