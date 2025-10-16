@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         patrolState = new PatrolState(this, "patrol");
         playerDetectedState = new PlayerDetectedState(this, "playerDetected");
-        chargeState = new ChargeState(this, "chargeState");
+        chargeState = new ChargeState(this, "charge");
         meleeAttackState = new MeleeAttackState(this, "meleeAttack");
         damagedState = new DamagedState(this, "damaged");
         deathState = new DeathState(this, "death");
