@@ -21,6 +21,7 @@ public class EnemyStats : ScriptableObject
     [Header("Charge State")]
     public float chargeTime = 2f;
     public float chargeSpeed = 5f;
+    public bool doChargeState;
 
     [Header("Melee Attack State")]
     public float damage = 1f;
