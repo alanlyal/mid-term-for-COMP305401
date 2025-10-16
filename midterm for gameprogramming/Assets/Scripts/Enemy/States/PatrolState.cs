@@ -20,16 +20,9 @@ public class PatrolState : EnemyBaseState
     {
         base.LogicUpdate();
 
-        if (enemy.CheckForPlayer() && enemy.stats.doChargeState)
+        if (enemy.CheckForPlayer())
         {
             enemy.SwitchState(enemy.playerDetectedState);
-        }
-        else
-        {
-            if (enemy.CheckForMeleeTarget())
-            {
-                enemy.SwitchState(enemy.meleeAttackState);
-            }
         }
 
         if (enemy.CheckForObstacles())

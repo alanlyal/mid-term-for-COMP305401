@@ -42,14 +42,7 @@ public class DamagedState : EnemyBaseState
                     enemy.Rotate();
                 }
 
-                if (enemy.stats.doChargeState)
-                {
-                    enemy.SwitchState(enemy.chargeState);
-                }
-                else
-                {
-                    enemy.SwitchState(enemy.patrolState);
-                }
+                enemy.SwitchState(enemy.chargeState);
             }
         }
     }
