@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public EnemyStats stats;
     public Transform ledgeDetector;
+    [HideInInspector] public Animator anim;
     [HideInInspector] public Rigidbody2D rb;
     [HideInInspector] public float stateTime; //keeps track of when we enter a state
 
@@ -37,6 +38,7 @@ public class Enemy : MonoBehaviour, IDamageable
         deathState = new DeathState(this, "death");
 
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
 
         currentHealth = stats.maxHealth;
 
