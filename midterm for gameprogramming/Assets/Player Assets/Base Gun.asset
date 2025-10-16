@@ -18,4 +18,9 @@ MonoBehaviour:
   bulletSpeed: 5
   bulletDamage: 1
   bulletLifeTime: 2
+  KBForce: 2
+  KBAngle: {x: 1, y: 1}
   bulletPrefab: {fileID: 6915267118670388648, guid: e96c457d207c80848bcc1d6ac41f065c, type: 3}
+  DamageableLayer:
+    serializedVersion: 2
+    m_Bits: 256
