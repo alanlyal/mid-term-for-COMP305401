@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour, IDamageable
     [HideInInspector] public Rigidbody2D rb;
     [HideInInspector] public float stateTime; //keeps track of when we enter a state
 
-    [HideInInspector] public int facingDirection = 1;
+    public int facingDirection = 1;
     public float currentHealth;
 
     #endregion

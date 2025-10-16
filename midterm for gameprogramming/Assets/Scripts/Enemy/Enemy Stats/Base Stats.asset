@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9aaf0070262823846bba05be24882f62, type: 3}
-  m_Name: Patrol Enemy
+  m_Name: Base Stats
   m_EditorClassIdentifier: 
   moveSpeed: 2.5
   edgeCheckDistance: 1
@@ -28,15 +28,11 @@ MonoBehaviour:
     m_Bits: 128
   chargeTime: 2
   chargeSpeed: 5
-  doChargeState: 0
   damage: 1
-  meleeDetectDistance: 0.3
-  attackCooldown: 0
+  meleeDetectDistance: 0.5
   knockbackAngle: {x: 2, y: 1}
   knockbackForce: 10
   DamageableLayer:
     serializedVersion: 2
     m_Bits: 640
-  maxHealth: 3
-  stunTime: 0.5
-  deathParticle: {fileID: 8247967714174777216, guid: a634c4aaabbe81542ac7330d081617a0, type: 3}
+  health: 3
