@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6013003019862599650}
   - component: {fileID: 6493612477772591067}
-  - component: {fileID: 1606718609031081683}
   - component: {fileID: 6663054813357212270}
   - component: {fileID: 1303418861859807275}
   - component: {fileID: 7762954612390309902}
@@ -77,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 127394679
-  m_SortingLayer: 1
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 1425083722, guid: 325d3a337da4f244ebd836ed560461a9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -90,41 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &1606718609031081683
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3963358694127213206}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!50 &6663054813357212270
 Rigidbody2D:
   serializedVersion: 4
@@ -166,6 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: 6fc985634b041c9438642623f191d321, type: 2}
   ledgeDetector: {fileID: 4571774907221775135}
+  anim: {fileID: 0}
   rb: {fileID: 0}
   stateTime: 0
   facingDirection: 1
