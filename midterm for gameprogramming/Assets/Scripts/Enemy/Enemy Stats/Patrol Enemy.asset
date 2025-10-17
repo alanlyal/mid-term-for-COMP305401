@@ -39,4 +39,4 @@ MonoBehaviour:
     m_Bits: 640
   maxHealth: 3
   stunTime: 0.5
-  deathParticle: {fileID: 17749157122629507, guid: 499e5735a66d3634e92d51700bcf74b3, type: 3}
+  deathParticle: {fileID: 8247967714174777216, guid: a634c4aaabbe81542ac7330d081617a0, type: 3}
