@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     private bool damageable = true;
 
     public HealthUI healthUI;
+
+    public static event Action OnPlayerDied;
 
     [Header("iFrames")]
     [SerializeField] private float iFrameDuration;
@@ -38,7 +41,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
         if (currentHealth <= 0)
         {
-            //player is dead
+            OnPlayerDied.Invoke();
         }
     }
 
@@ -69,7 +72,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
         if (currentHealth <= 0)
         {
-            //player is dead
+            OnPlayerDied.Invoke();
         }
     }
 }

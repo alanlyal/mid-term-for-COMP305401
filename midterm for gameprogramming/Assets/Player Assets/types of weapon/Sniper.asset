@@ -19,7 +19,7 @@ MonoBehaviour:
   spreadAngle: 0
   bulletSpeed: 75
   bulletDamage: 5
-  bulletLifeTime: 2
+  bulletLifeTime: 0.5
   pierce: 100
   KBForce: 0
   KBAngle: {x: 0, y: 0}

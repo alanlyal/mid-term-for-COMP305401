@@ -37,6 +37,6 @@ MonoBehaviour:
   DamageableLayer:
     serializedVersion: 2
     m_Bits: 640
-  maxHealth: 3
+  maxHealth: 8
   stunTime: 0.5
   deathParticle: {fileID: 17749157122629507, guid: 499e5735a66d3634e92d51700bcf74b3, type: 3}
