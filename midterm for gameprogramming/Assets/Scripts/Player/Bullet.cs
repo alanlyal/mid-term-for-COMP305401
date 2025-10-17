@@ -10,17 +10,19 @@ public class Bullet : MonoBehaviour
     private float spawnTime;
     private bool facingRight;
     private float KBForce;
+    private int pierce;
     private Vector2 KBAngle;
 
     private LayerMask damageableLayer;
 
     private Rigidbody2D rb;
 
-    public void Init(float damage, float speed, float lifetime, float KBForce, Vector2 KBAngle, LayerMask dameableLayer, bool facingRight)
+    public void Init(float damage, float speed, float lifetime, int pierce, float KBForce, Vector2 KBAngle, LayerMask dameableLayer, bool facingRight)
     {
         this.damage = damage;
         this.speed = speed;
         this.lifetime = lifetime;
+        this.pierce = pierce;
         this.KBForce = KBForce;
         this.KBAngle = KBAngle;
         this.damageableLayer = dameableLayer;
@@ -50,7 +52,11 @@ public class Bullet : MonoBehaviour
 
             if (damageable != null)
             {
-                Destroy(gameObject);
+                if (pierce <= 0)
+                {
+                    Destroy(gameObject);
+                }
+                pierce--;
                 damageable.Damage(damage, KBForce, new Vector2(KBAngle.x * (facingRight ? 1 : -1), KBAngle.y));
             }
         }

@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d83b3756836884a4baf93e7e2c9e18e5, type: 3}
-  m_Name: Shotgun
+  m_Name: Rifle
   m_EditorClassIdentifier: 
-  fireRate: 1.5
-  bulletsPerShot: 6
+  fireRate: 0.8
+  bulletsPerShot: 1
   burstFireAmount: 3
-  burstFireDelay: 0.03
-  spreadAngle: 15
-  bulletSpeed: 10
-  bulletDamage: 0.15
-  bulletLifeTime: 0.3
+  burstFireDelay: 0.06
+  spreadAngle: 2.5
+  bulletSpeed: 8
+  bulletDamage: 0.5
+  bulletLifeTime: 2
   pierce: 0
-  KBForce: 5
-  KBAngle: {x: 1, y: 0}
-  bulletPrefab: {fileID: 6640441627308354816, guid: 24fe2142058ee29439b114a442a69f66, type: 3}
+  KBForce: 0
+  KBAngle: {x: 0, y: 0}
+  bulletPrefab: {fileID: 6915267118670388648, guid: e96c457d207c80848bcc1d6ac41f065c, type: 3}
   DamageableLayer:
     serializedVersion: 2
     m_Bits: 256
