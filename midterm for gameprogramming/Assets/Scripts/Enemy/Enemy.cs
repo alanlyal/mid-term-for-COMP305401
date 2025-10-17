@@ -14,15 +14,12 @@ public class Enemy : MonoBehaviour, IDamageable
     public MeleeAttackState meleeAttackState;
     public DamagedState damagedState;
     public DeathState deathState;
-    public IdleState idleState;
 
     public EnemyStats stats;
     public Transform ledgeDetector;
     [HideInInspector] public Animator anim;
     [HideInInspector] public Rigidbody2D rb;
     [HideInInspector] public float stateTime; //keeps track of when we enter a state
-
-    private Collider2D col;
 
     public int facingDirection = 1;
     public float currentHealth;
@@ -39,11 +36,9 @@ public class Enemy : MonoBehaviour, IDamageable
         meleeAttackState = new MeleeAttackState(this, "meleeAttack");
         damagedState = new DamagedState(this, "damaged");
         deathState = new DeathState(this, "death");
-        idleState = new IdleState(this, "idle");
 
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        col = GetComponent<Collider2D>();
 
         currentHealth = stats.maxHealth;
 
@@ -72,12 +67,6 @@ public class Enemy : MonoBehaviour, IDamageable
 
         if (hit.collider == null || hitObstacle == true) { return true; }
         else { return false; }
-    }
-
-    public bool CheckForGround()
-    {
-        RaycastHit2D hit = Physics2D.Raycast(new Vector2(col.bounds.center.x, col.bounds.min.y), Vector2.down, 0.15f, stats.GroundLayer);
-        if (hit.collider == null) { return true; } else { return false; }
     }
 
     public bool CheckForPlayer()

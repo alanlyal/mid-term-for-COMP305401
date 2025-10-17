@@ -10,20 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d83b3756836884a4baf93e7e2c9e18e5, type: 3}
-  m_Name: Sniper
+  m_Name: plusRifle
   m_EditorClassIdentifier: 
-  fireRate: 3
-  bulletsPerShot: 1
-  burstFireAmount: 1
-  burstFireDelay: 0.1
-  spreadAngle: 0
-  bulletSpeed: 75
-  bulletDamage: 5
+  fireRate: 0.1
+  bulletsPerShot: 3
+  spreadAngle: 1
+  bulletSpeed: 10
+  bulletDamage: 1
   bulletLifeTime: 2
-  pierce: 100
   KBForce: 0
   KBAngle: {x: 0, y: 0}
-  bulletPrefab: {fileID: 4794666356415832865, guid: 7ecd3a664dd9d9f45b3aafda844480b2, type: 3}
+  bulletPrefab: {fileID: 6915267118670388648, guid: e96c457d207c80848bcc1d6ac41f065c, type: 3}
   DamageableLayer:
     serializedVersion: 2
     m_Bits: 256

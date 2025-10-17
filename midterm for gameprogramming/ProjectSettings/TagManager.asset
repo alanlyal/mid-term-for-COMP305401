@@ -58,9 +58,6 @@ TagManager:
   - name: Enemy
     uniqueID: 127394679
     locked: 0
-  - name: Obstacle
-    uniqueID: 1567346163
-    locked: 0
   - name: Bullet
     uniqueID: 353304185
     locked: 0

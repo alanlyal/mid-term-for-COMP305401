@@ -32,11 +32,6 @@ public class PatrolState : EnemyBaseState
             }
         }
 
-        if (enemy.CheckForGround())
-        {
-            enemy.SwitchState(enemy.idleState);
-        }
-
         if (enemy.CheckForObstacles())
         {
             enemy.Rotate();
