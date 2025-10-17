@@ -180,7 +180,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "how to play\na d to move left and tight \nspace to jump\nright mouse click
-    to shoot\ntip you can wall jumo"
+    to shoot\ntip you can wall jump"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a3889f4fb2e2baf438ca6c13bbd9f4c6, type: 2}
   m_sharedMaterial: {fileID: -18108116449552888, guid: a3889f4fb2e2baf438ca6c13bbd9f4c6, type: 2}
